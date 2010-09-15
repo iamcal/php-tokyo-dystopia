@@ -40,14 +40,14 @@ To work with a database file, you'll need to open it. Close it when you're done.
 	$ok = $db->close();
 
 The <code>$path</code> points at the <i>directory</i> you want the database to be created in.
-Multiple files will reside in there, ubt you don't need to worry about those directly.
+Multiple files will reside in there, but you don't need to worry about those directly.
 
 The following flags are valid and can be binary OR'd (<code>|</code>) together:
 
 	TOKYO_DYSTOPIA_*DBOWRITER - open in write mode
 	TOKYO_DYSTOPIA_*DBOREADER - open in read mode
 	TOKYO_DYSTOPIA_*DBOCREAT - create a new db if it doesn't exist (write mode only)
-	TOKYO_DYSTOPIA_*DBOTRUNC - create w new db even if it exists (write mode only)
+	TOKYO_DYSTOPIA_*DBOTRUNC - create a new db even if it exists (write mode only)
 	TOKYO_DYSTOPIA_*DBONOLCK - don't use file locking
 	TOKYO_DYSTOPIA_*DBOLCKNB - use non-blocking locks
 
@@ -147,11 +147,13 @@ It's possible to iterate over all records stored in a database.
 		# do something with record $id
 	}
 
-There is no way to distingish between <code>iternext()</code> failing and reaching the last record - 0 is returned in both cases
+There is no way to distingish between <code>iternext()</code> failing and reaching the last record - 0 is returned in both cases.
 
 
 Moar!!!
 -------
+
+These methods still need documenting.
 
 	$db->tune($expected_records, $expected_tokens, $index_file_size, $options);
 	$db->setcache($max_token_cache_size, $max_cached_leaf_nodes);
